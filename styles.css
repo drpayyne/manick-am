@@ -1,3 +1,9 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
 html,
 body,
 .container {
@@ -15,26 +21,19 @@ body,
 }
 
 .link {
-    display: inline-block;
+    display: block;
     font-family: monospace;
     font-size: 4rem;
     text-decoration: none;
     color: unset;
     border-right: 0.25rem solid lightskyblue;
-    margin: 0 auto;
     overflow: hidden;
-    white-space: no-wrap;
     width: 0%;
-    animation: typing 2.5s steps(10, jump-none) 1s forwards,
+    animation: typing 2.5s steps(9, start) forwards,
         blinking-cursor 1s step-end 1,
-        blinking-cursor 0.25s step-start 10,
-        blinking-cursor 1s step-end infinite;
-    -webkit-animation: typing 2.5s steps(10, jump-none) 1s forwards,
-        blinking-cursor 1s step-end 1,
-        blinking-cursor 0.25s step-start 10,
+        blinking-cursor 0.28s step-start 8,
         blinking-cursor 1s step-end infinite;
     animation-delay: 1s, 0s, 1s, 3.5s;
-    -webkit-animation-delay: 1s, 0s, 1s, 3.5s;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -53,28 +52,8 @@ body,
     }
 }
 
-@-webkit-keyframes typing {
-    from {
-        width: 0%;
-    }
-    to {
-        width: 100%;
-    }
-}
-
 @keyframes blinking-cursor {
-    from,
-    to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: lightskyblue;
-    }
-}
-
-@-webkit-keyframes blinking-cursor {
-    from,
-    to {
+    from, to {
         border-color: transparent;
     }
     50% {
