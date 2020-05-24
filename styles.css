@@ -27,9 +27,21 @@ body,
     width: 0%;
     animation: typing 2.5s steps(10, jump-none) 1s forwards,
         blinking-cursor 1s step-end 1,
-            blinking-cursor 0.25s step-start 10,
+        blinking-cursor 0.25s step-start 10,
+        blinking-cursor 1s step-end infinite;
+    -webkit-animation: typing 2.5s steps(10, jump-none) 1s forwards,
+        blinking-cursor 1s step-end 1,
+        blinking-cursor 0.25s step-start 10,
         blinking-cursor 1s step-end infinite;
     animation-delay: 1s, 0s, 1s, 3.5s;
+    -webkit-animation-delay: 1s, 0s, 1s, 3.5s;
+}
+
+@media (prefers-color-scheme: dark) {
+    .container {
+        background: black;
+        color: white;
+    }
 }
 
 @keyframes typing {
@@ -41,7 +53,26 @@ body,
     }
 }
 
+@-webkit-keyframes typing {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
 @keyframes blinking-cursor {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: lightskyblue;
+    }
+}
+
+@-webkit-keyframes blinking-cursor {
     from,
     to {
         border-color: transparent;
