@@ -12,7 +12,7 @@ body,
 }
 
 .container {
-    font-family: sans-serif, sans-serif;
+    font-family: 'Arima Madurai', cursive;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,13 +49,9 @@ body,
     line-height: 1.4rem;
 }
 
-a[href="ta"] {
-    font-weight: bold;
-}
-
 .link {
     display: block;
-    font-family: monospace, monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 4rem;
     text-decoration: none;
     color: unset;
