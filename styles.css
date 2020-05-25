@@ -12,7 +12,7 @@ body,
 }
 
 .container {
-    font-family: sans-serif;
+    font-family: sans-serif, sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,9 +20,42 @@ body,
     font-size: 2rem;
 }
 
+.language-switcher {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-evenly;
+    width: 11rem;
+    height: 3rem;
+}
+
+.language-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+}
+
+.language-container a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    background-color: lightskyblue;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 1.4rem;
+    text-align: center;
+    line-height: 1.4rem;
+}
+
+a[href="ta"] {
+    font-weight: bold;
+}
+
 .link {
     display: block;
-    font-family: monospace;
+    font-family: monospace, monospace;
     font-size: 4rem;
     text-decoration: none;
     color: unset;
@@ -30,8 +63,8 @@ body,
     overflow: hidden;
     width: 0%;
     animation: typing 2.5s steps(9, start) forwards,
-        blinking-cursor 1s step-end 1,
-        blinking-cursor 0.28s step-start 8,
+    blinking-cursor 1s step-end 1,
+    blinking-cursor 0.28s step-start 8,
         blinking-cursor 1s step-end infinite;
     animation-delay: 1s, 0s, 1s, 3.5s;
 }
@@ -53,7 +86,8 @@ body,
 }
 
 @keyframes blinking-cursor {
-    from, to {
+    from,
+    to {
         border-color: transparent;
     }
     50% {
