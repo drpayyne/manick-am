@@ -51,11 +51,16 @@ body,
     line-height: 1.4rem;
 }
 
+.text {
+    user-select: none;
+}
+
 .link {
     display: block;
     font-family: "Courier New", Courier, monospace;
     font-size: 4rem;
     text-decoration: none;
+    user-select: none;
     color: unset;
     border-right: 0.25rem solid lightskyblue;
     overflow: hidden;
