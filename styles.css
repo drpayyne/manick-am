@@ -12,7 +12,7 @@ body,
 }
 
 .container {
-    font-family: 'Arima Madurai', cursive;
+    font-family: "Arima Madurai", cursive;
     font-weight: 400;
     font-style: normal;
     display: flex;
@@ -53,17 +53,14 @@ body,
 
 .link {
     display: block;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     font-size: 4rem;
     text-decoration: none;
     color: unset;
     border-right: 0.25rem solid lightskyblue;
     overflow: hidden;
     width: 0%;
-    animation: typing 2.5s steps(9, start) forwards,
-    blinking-cursor 1s step-end 1,
-    blinking-cursor 0.28s step-start 8,
-        blinking-cursor 1s step-end infinite;
+    animation: typing 2.5s steps(9, start) forwards, blinking-cursor 1s step-end 1, blinking-cursor 0.28s step-start 8, blinking-cursor 1s step-end infinite;
     animation-delay: 1s, 0s, 1s, 3.5s;
 }
 
@@ -91,4 +88,14 @@ body,
     50% {
         border-color: lightskyblue;
     }
+}
+
+/* Tamil font included */
+@font-face {
+    font-family: "Arima Madurai";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local("Arima Madurai Medium"), local("ArimaMadurai-Medium"), url(font.woff2) format("woff2");
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
 }
