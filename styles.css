@@ -52,12 +52,15 @@ body {
     opacity: 1;
 }
 
+.content-part:focus h1 {
+    opacity: 1;
+}
+
 .header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
     position: fixed;
     top: 0;
     right: 0;
