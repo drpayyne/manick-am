@@ -2,24 +2,62 @@
 *:before,
 *:after {
     box-sizing: border-box;
+    font-family: "Arima Madurai", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
 html,
-body,
-.container {
+body {
     height: 100%;
     margin: 0;
 }
 
-.container {
-    font-family: "Arima Madurai", cursive;
-    font-weight: 400;
-    font-style: normal;
+.header {
+    height: 100%;
+    margin: 0;
+}
+
+.content {
+    min-height: 100%;
+    animation: extend 0.5s ease-in-out forwards;
+    animation-delay: 3.5s;
+    margin-top: 100vh;
+}
+
+.content-part {
+    height: 20vh;
+    background-color: yellow;
+    color: black;
+    margin: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-part h1 {
+    visibility: hidden;
+}
+
+.content-part:hover h1 {
+    visibility: visible;
+    animation: blur-bg 0.5s ease-in-out forwards;
+}
+
+.header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    animation: minimize-blur 0.5s ease-in-out forwards;
+    animation-delay: 3.5s;
 }
 
 .language-switcher {
@@ -70,9 +108,36 @@ body,
 }
 
 @media (prefers-color-scheme: dark) {
-    .container {
+    body {
         background: black;
         color: white;
+    }
+}
+
+@keyframes minimize-blur {
+    from {
+        height: 100%;
+    }
+    to {
+        height: 20%;
+    }
+}
+
+@keyframes extend {
+    from {
+        margin-top: 100vh;
+    }
+    to {
+        margin-top: 20vh;
+    }
+}
+
+@keyframes blur-bg {
+    from {
+        visibility: hidden;
+    }
+    to {
+        visibility: visible;
     }
 }
 
