@@ -2,24 +2,72 @@
 *:before,
 *:after {
     box-sizing: border-box;
+    font-family: "Arima Madurai", cursive;
+    font-weight: 400;
+    font-style: normal;
+    user-select: none;
 }
 
 html,
-body,
-.container {
+body {
     height: 100%;
     margin: 0;
 }
 
-.container {
-    font-family: "Arima Madurai", cursive;
-    font-weight: 400;
-    font-style: normal;
+.header {
+    height: 100%;
+    margin: 0;
+}
+
+.content {
+    min-height: 100%;
+    animation: extend 0.5s ease-in-out forwards;
+    animation-delay: 3.5s;
+    margin-top: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.content-part {
+    height: 20vh;
+    width: 30%;
+    background: #56CCF2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: black;
+    margin: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    border-radius: 16px;
+}
+
+.content-part:hover {
+    cursor: default;
+}
+
+.header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    animation: minimize-blur 0.5s ease-in-out forwards;
+    animation-delay: 3.5s;
 }
 
 .language-switcher {
@@ -43,7 +91,9 @@ body,
     text-decoration: none;
     color: black;
     font-size: 1rem;
-    background-color: lightskyblue;
+    background: #56CCF2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius: 0.5rem;
     width: 100%;
     height: 1.4rem;
@@ -70,9 +120,36 @@ body,
 }
 
 @media (prefers-color-scheme: dark) {
-    .container {
+    body {
         background: black;
         color: white;
+    }
+}
+
+@keyframes minimize-blur {
+    from {
+        height: 100vh;
+    }
+    to {
+        height: 24vh;
+    }
+}
+
+@keyframes extend {
+    from {
+        margin-top: 100vh;
+    }
+    to {
+        margin-top: 24vh;
+    }
+}
+
+@keyframes blur-bg {
+    from {
+        visibility: hidden;
+    }
+    to {
+        visibility: visible;
     }
 }
 
@@ -113,4 +190,96 @@ body,
     font-display: swap;
     src: local("Arima Madurai Medium"), local("ArimaMadurai-Medium"), url(latin.woff2) format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@media (max-width: 1025px) {
+    .content-part {
+        width: 40%;
+    }
+
+    @keyframes minimize-blur {
+        from {
+            height: 100vh;
+        }
+        to {
+            height: 28vh;
+        }
+    }
+
+    @keyframes extend {
+        from {
+            margin-top: 100vh;
+        }
+        to {
+            margin-top: 28vh;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    @keyframes minimize-blur {
+        from {
+            height: 100vh;
+        }
+        to {
+            height: 30vh;
+        }
+    }
+
+    @keyframes extend {
+        from {
+            margin-top: 100vh;
+        }
+        to {
+            margin-top: 30vh;
+        }
+    }
+}
+
+@media (max-width: 426px) {
+    .content-part {
+        width: 90%;
+    }
+
+    @keyframes minimize-blur {
+        from {
+            height: 100vh;
+        }
+        to {
+            height: 34vh;
+        }
+    }
+
+    @keyframes extend {
+        from {
+            margin-top: 100vh;
+        }
+        to {
+            margin-top: 34vh;
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .link {
+        font-size: 3rem;
+    }
+
+    @keyframes minimize-blur {
+        from {
+            height: 100vh;
+        }
+        to {
+            height: 34vh;
+        }
+    }
+
+    @keyframes extend {
+        from {
+            margin-top: 100vh;
+        }
+        to {
+            margin-top: 34vh;
+        }
+    }
 }
