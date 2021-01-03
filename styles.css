@@ -64,8 +64,7 @@ body {
     top: 0;
     right: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
+    background-color: white;
     animation: minimize-blur 0.5s ease-in-out forwards;
     animation-delay: 3.5s;
 }
@@ -123,6 +122,10 @@ body {
     body {
         background: black;
         color: white;
+    }
+
+    .header {
+        background-color: black;
     }
 }
 
