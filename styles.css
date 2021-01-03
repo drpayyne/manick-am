@@ -5,6 +5,7 @@
     font-family: "Arima Madurai", cursive;
     font-weight: 400;
     font-style: normal;
+    user-select: none;
 }
 
 html,
@@ -31,54 +32,25 @@ body {
 .content-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 84vw;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .content-part {
     height: 20vh;
-    width: 40vw;
-    color: white;
-    margin: 0.5rem;
+    width: 30%;
+    background-color: lightskyblue;
+    color: black;
+    margin: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    background-image: url("images/la_la_land.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.content-part:last-child {
-    height: calc(40vw / 2);
-    width: 40vw;
-}
-
-.content-part h1 {
-    opacity: 0;
-    font-size: 2rem;
-    transition: 125ms ease-in;
-    z-index: 1;
-    user-select: none;
+    border-radius: 16px;
 }
 
 .content-part:hover {
-    cursor: pointer;
-}
-
-.content-part:hover h1 {
-    opacity: 1;
-    font-size: 3rem;
-}
-
-.content-part img {
-    position: absolute;
-    /* height: 100%; */
-    width: 40vw;
-    object-fit: cover;
-    border-radius: 40px;
+    cursor: default;
 }
 
 .header {
@@ -152,10 +124,10 @@ body {
 
 @keyframes minimize-blur {
     from {
-        height: 100%;
+        height: 100vh;
     }
     to {
-        height: 20%;
+        height: 24vh;
     }
 }
 
@@ -164,7 +136,7 @@ body {
         margin-top: 100vh;
     }
     to {
-        margin-top: 20vh;
+        margin-top: 24vh;
     }
 }
 
@@ -214,4 +186,96 @@ body {
     font-display: swap;
     src: local("Arima Madurai Medium"), local("ArimaMadurai-Medium"), url(latin.woff2) format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@media (max-width: 1025px) {
+    .content-part {
+        width: 40%;
+    }
+
+    @keyframes minimize-blur {
+        from {
+            height: 100vh;
+        }
+        to {
+            height: 28vh;
+        }
+    }
+
+    @keyframes extend {
+        from {
+            margin-top: 100vh;
+        }
+        to {
+            margin-top: 28vh;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    @keyframes minimize-blur {
+        from {
+            height: 100vh;
+        }
+        to {
+            height: 30vh;
+        }
+    }
+
+    @keyframes extend {
+        from {
+            margin-top: 100vh;
+        }
+        to {
+            margin-top: 30vh;
+        }
+    }
+}
+
+@media (max-width: 426px) {
+    .content-part {
+        width: 90%;
+    }
+
+    @keyframes minimize-blur {
+        from {
+            height: 100vh;
+        }
+        to {
+            height: 34vh;
+        }
+    }
+
+    @keyframes extend {
+        from {
+            margin-top: 100vh;
+        }
+        to {
+            margin-top: 34vh;
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .link {
+        font-size: 3rem;
+    }
+
+    @keyframes minimize-blur {
+        from {
+            height: 100vh;
+        }
+        to {
+            height: 34vh;
+        }
+    }
+
+    @keyframes extend {
+        from {
+            margin-top: 100vh;
+        }
+        to {
+            margin-top: 34vh;
+        }
+    }
 }
