@@ -116,6 +116,16 @@ body {
     animation-delay: 1s, 0s, 1s, 3.5s;
 }
 
+.icon-container {
+    width: 34px;
+    height: 34px;
+    margin: 22px 0;
+}
+
+.icon-linkedin {
+    color: rgb(10, 102, 194);
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         background: black;
