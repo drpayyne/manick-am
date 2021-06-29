@@ -116,10 +116,14 @@ body {
     animation-delay: 1s, 0s, 1s, 3.5s;
 }
 
+.profiles {
+    display: flex;
+}
+
 .icon-container {
     width: 34px;
     height: 34px;
-    margin: 22px 0;
+    margin: 22px;
 }
 
 .icon-linkedin {
